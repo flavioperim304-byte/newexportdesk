@@ -1,0 +1,15 @@
+Export Desk — parar o upload pelo site do GitHub
+================================================
+
+O arrasto de arquivos no github.com já quebrou o Render várias vezes.
+A alternativa: uma Deploy Key com escrita. Eu faço o git push.
+
+1. Abra https://github.com/flavioperim304-byte/exportsales2/settings/keys
+2. Add deploy key. Title: cursor-export-desk
+3. Marque Allow write access
+4. Cole a linha de public/cursor-deploy.pub (ssh-ed25519 …)
+5. Avise: chave ok
+
+Eu envio a árvore certa (tsconfig, /leads, sem os .ts soltos na raiz).
+Render → exportsales (Node) pega o commit. Não apague o disco.
+Python (exportsales2) está ok. Não reenvie o CSV do Panamá.

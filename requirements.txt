@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+llama-index
+llama-index-vector-stores-chroma
+chromadb
+pandas
+openpyxl
+openai

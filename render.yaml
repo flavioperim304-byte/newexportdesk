@@ -1,0 +1,25 @@
+# Web Service on Render. Link this repo, then attach the Environment Group
+# that holds EXA_API_KEY, FIRECRAWL_API_KEY, OPENAI_API_KEY, PARALLEL_API_KEY.
+# Set DATABASE_URL on the Node service to the Supabase Session pooler URI (port 5432).
+# Set RAG_API_URL on the Node service so OpenAI/Parallel see the Chroma index.
+# There is no extra "run" step: when the deploy is Live, open the .onrender.com URL.
+
+services:
+  - type: web
+    name: exportdesk-v2
+    runtime: node
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npx next start -H 0.0.0.0 -p $PORT
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      # Set DATABASE_URL in the dashboard from the Supabase Session pooler URI.
+      # Do not commit the password.
+    disk:
+      name: exportdesk-v2-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1

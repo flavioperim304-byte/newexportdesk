@@ -1,0 +1,43 @@
+{
+  "name": "exportdesk-v2",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev -p 3847 -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p ${PORT:-3847}",
+    "lint": "eslint",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.9.0",
+    "@netlify/blobs": "^11.1.7",
+    "class-variance-authority": "^0.7.1",
+    "cn": "^0.5.0",
+    "lucide-react": "^1.62.0",
+    "next": "16.4.3",
+    "pg": "^8.23.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "shadcn": "^4.23.0",
+    "tw-animate-css": "^1.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "@shadcn/registry": "0.2.1"
+  }
+}

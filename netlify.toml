@@ -1,0 +1,13 @@
+# Netlify applies the OpenNext adapter for Next.js 16 on its own.
+# Do not pin @netlify/plugin-nextjs.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  # A search step (start Exa, poll Firecrawl, score) has to finish inside one request.
+  timeout = 60
